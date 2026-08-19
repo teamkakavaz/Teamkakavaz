@@ -192,13 +192,50 @@
       <strong id="total">PKR 0</strong>
     </div>
 
-    <button class="btn" onclick="checkout()">
-      CHECKOUT →
-    </button>
+    <button class="btn" onclick="openCheckout()">CHECKOUT →</button>
   </div>
 
 </aside>
+<section id="checkout" class="checkout-panel">
+  <div class="checkout-box">
+    <button class="checkout-close" onclick="closeCheckout()">×</button>
 
+    <p class="eyebrow">CHECKOUT</p>
+    <h2>COMPLETE YOUR ORDER</h2>
+
+    <form id="checkoutForm" onsubmit="placeOrder(event)">
+      <input id="customerName" type="text" placeholder="Full name" required>
+
+      <input id="customerPhone" type="tel" placeholder="Phone number" required>
+
+      <input id="customerEmail" type="email" placeholder="Email address" required>
+
+      <input id="customerCity" type="text" placeholder="City" required>
+
+      <textarea id="customerAddress" placeholder="Complete delivery address" required></textarea>
+
+      <select id="paymentMethod" onchange="paymentChanged()" required>
+        <option value="">SELECT PAYMENT METHOD</option>
+        <option value="cod">Cash on Delivery</option>
+        <option value="bank">Bank Transfer</option>
+        <option value="easypaisa">Easypaisa</option>
+        <option value="jazzcash">JazzCash</option>
+      </select>
+
+      <div id="paymentInstructions"></div>
+
+      <input
+        id="transactionId"
+        type="text"
+        placeholder="Transaction / Reference ID"
+      >
+
+      <button class="btn" type="submit">
+        PLACE ORDER →
+      </button>
+    </form>
+  </div>
+</section>
 <div id="shade" onclick="toggleCart()"></div>
 
 <footer>
