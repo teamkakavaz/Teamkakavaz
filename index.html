@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TEAM KAKAVAZ — Official Merch</title>
+  <meta name="description" content="Official Team Kakavaz merch. Built for the community.">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="nav">
+    <a class="logo" href="#home">KAKAVAZ<span>.</span></a>
+    <nav>
+      <a href="#shop">Shop</a>
+      <a href="#about">About</a>
+      <a href="#drop">Drop</a>
+    </nav>
+    <button class="cart" onclick="toggleCart()">Bag <span id="count">0</span></button>
+  </header>
+
+  <main>
+    <section id="home" class="hero">
+      <div class="hero-copy">
+        <p class="eyebrow">OFFICIAL TEAM KAKAVAZ</p>
+        <h1>WEAR THE<br><span>VIBE.</span></h1>
+        <p class="sub">The official merch for the Kakavaz community. Limited drops. Big energy.</p>
+        <a class="btn" href="#shop">SHOP THE DROP →</a>
+      </div>
+      <div class="hero-art">
+        <div class="sticker">TEAM<br>KAKAVAZ</div>
+        <div class="shirt">
+          <div class="shirt-logo">KAKAVAZ</div>
+        </div>
+      </div>
+    </section>
+
+    <section class="ticker"><div>TEAM KAKAVAZ • OFFICIAL MERCH • TEAM KAKAVAZ • OFFICIAL MERCH • </div></section>
+
+    <section id="drop" class="drop">
+      <div>
+        <p class="eyebrow">NEW DROP</p>
+        <h2>KAVAZ CORE<br>COLLECTION</h2>
+      </div>
+      <p>Clean pieces. Loud identity. Made for the people who know.</p>
+    </section>
+
+    <section id="shop" class="shop">
+      <div class="section-head">
+        <div><p class="eyebrow">SHOP</p><h2>THE MERCH</h2></div>
+        <p>Tap a product to add it to your bag.</p>
+      </div>
+      <div class="grid">
+        <article class="product">
+          <div class="product-img tee"><span>KAKAVAZ</span></div>
+          <div class="product-info"><div><h3>Kakavaz Core Tee</h3><p>Black · Unisex</p></div><strong>PKR 2,499</strong></div>
+          <button onclick="add('Kakavaz Core Tee',2499)">ADD TO BAG</button>
+        </article>
+        <article class="product">
+          <div class="product-img hoodie"><span>TEAM<br>KAKAVAZ</span></div>
+          <div class="product-info"><div><h3>Team Kakavaz Hoodie</h3><p>Black · Heavyweight</p></div><strong>PKR 4,999</strong></div>
+          <button onclick="add('Team Kakavaz Hoodie',4999)">ADD TO BAG</button>
+        </article>
+        <article class="product">
+          <div class="product-img cap"><span>K</span></div>
+          <div class="product-info"><div><h3>K Logo Cap</h3><p>Black · Adjustable</p></div><strong>PKR 1,499</strong></div>
+          <button onclick="add('K Logo Cap',1499)">ADD TO BAG</button>
+        </article>
+        <article class="product">
+          <div class="product-img tee alt"><span>KAKAVAZ<br>WORLDWIDE</span></div>
+          <div class="product-info"><div><h3>Worldwide Tee</h3><p>White · Unisex</p></div><strong>PKR 2,499</strong></div>
+          <button onclick="add('Worldwide Tee',2499)">ADD TO BAG</button>
+        </article>
+      </div>
+    </section>
+
+    <section id="about" class="about">
+      <div class="about-big">THIS IS<br><span>TEAM.</span></div>
+      <div class="about-copy">
+        <p class="eyebrow">ABOUT KAKAVAZ</p>
+        <h2>More than merch.</h2>
+        <p>Team Kakavaz is a community. The clothes are just how we show it. Rock the logo, rep the team and make the next drop yours.</p>
+        <a class="text-link" href="https://www.instagram.com/" target="_blank">FOLLOW ON INSTAGRAM ↗</a>
+      </div>
+    </section>
+
+    <section class="signup">
+      <p class="eyebrow">DON'T MISS THE NEXT DROP</p>
+      <h2>GET ON THE LIST.</h2>
+      <form onsubmit="join(event)">
+        <input id="email" type="email" placeholder="your@email.com" required>
+        <button class="btn" type="submit">JOIN →</button>
+      </form>
+      <small id="message"></small>
+    </section>
+  </main>
+
+  <aside id="cart" class="cart-panel">
+    <div class="cart-top"><h2>YOUR BAG</h2><button onclick="toggleCart()">×</button></div>
+    <div id="items"></div>
+    <div class="cart-bottom"><div><span>Total</span><strong id="total">PKR 0</strong></div><button class="btn" onclick="checkout()">CHECKOUT →</button></div>
+  </aside>
+  <div id="shade" onclick="toggleCart()"></div>
+
+  <footer>
+    <div><strong>TEAM KAKAVAZ</strong><p>Built for the community.</p></div>
+    <div><a href="#shop">Shop</a><a href="#about">About</a><a href="#drop">Drops</a></div>
+    <p>© 2026 Team Kakavaz. All rights reserved.</p>
+  </footer>
+  <script src="script.js"></script>
+</body>
+</html>
