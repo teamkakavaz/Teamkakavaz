@@ -99,10 +99,10 @@ function checkout() {
     return;
   }
 
-  let order = "TEAM KAKAVAZ ORDER%0A%0A";
+  let order = "TEAM KAKAVAZ ORDER\n\n";
 
   cart.forEach(item => {
-    order += `${item.name} x${item.quantity} - PKR ${(item.price * item.quantity).toLocaleString()}%0A`;
+    order += `${item.name} x${item.quantity} - PKR ${(item.price * item.quantity).toLocaleString()}\n`;
   });
 
   const total = cart.reduce(
@@ -110,12 +110,9 @@ function checkout() {
     0
   );
 
-  order += `%0ATotal: PKR ${total.toLocaleString()}`;
+  order += `\nTotal: PKR ${total.toLocaleString()}`;
 
-  alert(
-    "Your order is ready!%0A%0A" +
-    decodeURIComponent(order.replace(/%0A/g, "\n"))
-  );
+  alert(order);
 }
 
 function join(event) {
@@ -127,7 +124,6 @@ function join(event) {
   if (email && message) {
     message.textContent = "You're on the list! 🔥";
     email.value = "";
-    
   }
 }
 
